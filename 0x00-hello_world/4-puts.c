@@ -1,2 +1,12 @@
-#!/bin/bash
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 main_1.c && ./a.out
+	#include <stdio.h>
+
+	/**
+ 	  * main - Entry point
+ 	  *
+	  * Return: Always 0 (Success)
+	  */
+	int main(void)
+	{
+		puts("Your program returns a SUCCESS value/n");
+	       	return (0);
+	}
