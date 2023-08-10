@@ -7,6 +7,6 @@
 	  */
 	int main(void)
 	{
-		puts("Your program returns a SUCCESS value/n");
+		puts("\"Programming is like building a multilingual puzzl/n");
 	       	return (0);
 	}
