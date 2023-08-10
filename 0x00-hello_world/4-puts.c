@@ -3,7 +3,7 @@
 /**
  * main - Entry point
  *
- *Description: A C program that prints with put Function
+ *Description: program that prints with  Function
  *
  * Return: Always 0 (Success)
 */
