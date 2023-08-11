@@ -20,7 +20,7 @@ int main(void)
 	}
 
 	ns = 'A';
-	while (sr <= 'z')
+	while (sr <= 'Z')
 	{
 		putchar(ns);
 		ns++;
