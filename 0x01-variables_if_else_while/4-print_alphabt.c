@@ -18,7 +18,6 @@ int main(void)
 		if (ww != 'q' && ww != 'e')
 		{
 			putchar(ww);
-			ww++;
 		}
 	}
 	putchar('\n');
