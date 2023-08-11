@@ -25,7 +25,7 @@ int main(void)
 		if (num1 != 8 || num2 != 9)
 		{
 			putchar(',');
-			putchar(' ');
+			putchar('  ');
 		}
 	}
 	putchar('\n');
