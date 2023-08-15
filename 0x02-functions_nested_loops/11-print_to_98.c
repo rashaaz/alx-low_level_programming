@@ -12,26 +12,18 @@ void print_to_98(int ioo)
 {
 	int ii;
 
-	if (ioo >= 98)
+	if (ioo > 98)
 	{
 		for (ii = ioo; ii > 98; ii--)
 		{
-			printf("%d", ii);
-			if (ii != 98)
-			{
-				printf(", ");
-			
+			printf("%d, ", ii);
 		}
 	}
 	else
 	{
 		for (ii = ioo; ii < 98; ii++)
 		{
-			printf("%d", ii);
-			if (ii != 98)
-			{
-				printf(", ");
-			}
+			printf("%d, ", ii);
 		}
 	}
 	printf("98\n");
