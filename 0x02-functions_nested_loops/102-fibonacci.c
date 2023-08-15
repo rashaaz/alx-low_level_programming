@@ -10,14 +10,14 @@
 
 int main(void)
 {
-	int i, nb1, nb2, sum;
+	long unsigned int i, nb1, nb2, sum;
 
 	nb1 = 0;
 	nb2 = 1;
 	for (i = 0; i < 50; i++)
 	{
 		sum = nb1 + nb2;
-		printf("%ul", sum);
+		printf("%lu", sum);
 		nb1 = nb2;
 		nb2 = sum;
 
