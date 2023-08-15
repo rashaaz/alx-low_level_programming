@@ -20,7 +20,7 @@ void print_to_98(int ioo)
 			if (ii != 98)
 			{
 				printf(", ");
-			}
+			
 		}
 	}
 	else
@@ -34,5 +34,5 @@ void print_to_98(int ioo)
 			}
 		}
 	}
-	printf("\n");
+	printf("98\n");
 }
