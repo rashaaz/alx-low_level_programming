@@ -35,4 +35,5 @@ int sum_of_mult(int l)
 int main(void)
 {
 	printf("%d\n", sum_of_mult(1024));
+	return (0);
 }
