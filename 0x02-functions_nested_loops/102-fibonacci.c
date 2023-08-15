@@ -14,7 +14,7 @@ int main(void)
 
 	nb1 = 0;
 	nb2 = 1;
-	for (i = 0; i < 50; i++)
+	for (i = 0; i < 49; i++)
 	{
 		sum = nb1 + nb2;
 		printf("%u", sum);
