@@ -11,11 +11,11 @@
 
 int main(void)
 {
+	float all_sum;
 	unsigned long int nb1, nb2, sum;
 
 	nb1 = 0;
 	nb2 = 1;
-	float all_sum;
 
 	while (1)
 	{
