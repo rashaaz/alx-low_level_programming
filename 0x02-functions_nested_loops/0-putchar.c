@@ -1,4 +1,4 @@
-#include "rasha.h"
+#include "main.h"
 
 /**
  * main - Entry point
