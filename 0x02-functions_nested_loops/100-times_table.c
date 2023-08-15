@@ -19,7 +19,7 @@ void print_times_table(int o)
 
 	for (i = 0; i <= o; i++)
 	{
-		for (j = 0; j <= 0; j++)
+		for (j = 0; j <= o; j++)
 		{
 			int resu = i * j;
 
