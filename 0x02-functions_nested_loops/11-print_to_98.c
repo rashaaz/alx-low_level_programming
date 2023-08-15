@@ -31,7 +31,7 @@ void print_to_98(int ioo)
 		{
 			_putchar((ii / 10) + '0');
 			_putchar((ii % 10) + '0');
-			if (ii != 9)
+			if (ii != 89)
 			{
 				_putchar(',');
 				_putchar(' ');
