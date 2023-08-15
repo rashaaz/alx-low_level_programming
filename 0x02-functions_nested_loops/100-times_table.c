@@ -23,9 +23,9 @@ void print_times_table(int o)
 		{
 			int resu = i * j;
 
-			if (j == 0)
+			if (j == o)
 			{
-				printf("%3d", resu);
+				printf("%d", resu);
 			}
 			else
 			{
