@@ -21,7 +21,7 @@ int main(void)
 		nb1 = nb2;
 		nb2 = sum;
 
-		if (i == 0)
+		if (i == 49)
 		{
 			printf("\n");
 		}
