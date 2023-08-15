@@ -18,8 +18,11 @@ void print_to_98(int ioo)
 		{
 			_putchar((ii / 10) + '0');
 			_putchar((ii % 10) + '0');
-			_putchar(',');
-			_putchar(' ');
+			if (ii != 98)
+			{
+				_putchar(',');
+				_putchar(' ');
+			}
 		}
 	}
 	else
@@ -28,8 +31,11 @@ void print_to_98(int ioo)
 		{
 			_putchar((ii / 10) + '0');
 			_putchar((ii % 10) + '0');
-			_putchar(',');
-			_putchar(' ');
+			if (ii != 98)
+			{
+				_putchar(',');
+				_putchar(' ');
+			}
 		}
 	}
 	_putchar((98 / 10) + '0');
