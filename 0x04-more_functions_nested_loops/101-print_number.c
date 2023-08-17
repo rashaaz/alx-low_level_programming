@@ -14,12 +14,9 @@ void print_number(int n)
 		_putchar('-');
 		kk = -kk;
 	}
-	else if ((kk / 10) > 0)
-	{
+	if ((kk / 10) > 0)
+
 		print_number(kk / 10);
-	}
-	else
-	{
-		_putchar((kk % 10) + 48);
-	}
+
+	_putchar((kk % 10) + 48);
 }
