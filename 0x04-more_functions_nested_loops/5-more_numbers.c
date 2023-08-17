@@ -15,20 +15,15 @@ void more_numbers(void)
 
 	for (co = 0; co < 10; co++)
 	{
-		_putchar(48);
 		pl = 0;
-		while (pl <= 13)
+		while (pl <= 14)
 		{
-			pl++;
 			if (pl >= 10)
 			{
 				_putchar(pl / 10 + '0');
-				_putchar(pl % 10 + '0');
 			}
-			else
-			{
-				_putchar(pl + '0');
-			}
+			_putchar(pl % 10 + '0');
+			pl++;
 		}
 		_putchar('\n');
 	}
