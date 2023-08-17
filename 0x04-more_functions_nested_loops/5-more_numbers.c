@@ -15,7 +15,7 @@ void more_numbers(void)
 
 	for (co = 0; co < 10; co++)
 	{
-		_putchar('0');
+		_putchar(48);
 		pl = 0;
 		while (pl <= 13)
 		{
