@@ -8,16 +8,18 @@
 */
 double square(double g)
 {
-	double ii = 0;
-	double jj = g / 2;
+	float ii, jj;
 
-	while (jj != ii)
+	 ii = g / 2;
+	 jj = 0;
+
+	while (ii != jj)
 	{
-		ii = jj;
-		jj = (g / ii + ii) / 2;
+		jj = ii;
+		ii = (g / jj + jj) / 2;
 	}
 
-	return (jj);
+	return (ii);
 }
 
 /**
@@ -27,7 +29,7 @@ double square(double g)
 
 void calculate(long int cc)
 {
-	int la, pr;
+	int pr, la;
 
 	while (cc % 2 == 0)
 	{
@@ -43,9 +45,7 @@ void calculate(long int cc)
 		}
 	}
 	if (cc > 2)
-	{
 		la = cc;
-	}
 	printf("%d\n", la);
 }
 
@@ -56,8 +56,7 @@ void calculate(long int cc)
 */
 int main(void)
 {
-	int yy;
-
 	calculate(612852475143);
+
 	return (0);
 }
