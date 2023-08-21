@@ -22,7 +22,6 @@ int _atoi(char *s)
 		else if (*s >= '0' && *s <= '9')
 		{
 			re = re * 10 + (*s - '0');
-			d = 1;
 		}
 		else if (d)
 		{
