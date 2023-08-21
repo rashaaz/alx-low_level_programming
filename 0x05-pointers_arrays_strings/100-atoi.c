@@ -9,7 +9,7 @@
 
 int _atoi(char *s)
 {
-	int re = 0;
+	unsigned int re = 0;
 	int sn = 1;
 	int d = 0;
 
@@ -22,6 +22,7 @@ int _atoi(char *s)
 		else if (*s >= '0' && *s <= '9')
 		{
 			re = re * 10 + (*s - '0');
+			d = 1;
 		}
 		else if (d)
 		{
