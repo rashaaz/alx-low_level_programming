@@ -22,7 +22,7 @@ int _strcmp(char *s1, char *s2)
 		}
 		else if (s1[ii] == s2[ii])
 		{
-			return (0);
+			return (s1[ii] - s2[ii]);
 		}
 	}
 }
