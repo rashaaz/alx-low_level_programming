@@ -21,19 +21,19 @@ char *cap_string(char *str)
 				str[ii] == '!' || str[ii] == '?' || str[ii] == '"' ||
 				str[ii] == '(' || str[ii] == ')' || str[ii] == '{' || str[ii] == '}')
 		{
-			ss = 1; 
+			ss = 1;
 		}
 		else if (ss && (str[ii] >= 'a' && str[ii] <= 'z'))
 		{
 			str[ii] = str[ii] - 32;
-			ss = 0; 
+			ss = 0;
 		}
 		else
 		{
-			ss = 0; 
+			ss = 0;
 		}
 	}
 
-	return str;
+	return (str);
 }
 
