@@ -2,10 +2,10 @@
 
 /**
  * cap_string - capitalizes all words after the separator
- * @str: input
+ * @tt: input
  *
  * Return: pointer
-*/
+ */
 char *cap_string(char *tt)
 {
 	int ii;
@@ -13,10 +13,10 @@ char *cap_string(char *tt)
 
 	for (ii = 0; tt[ii] != '\0'; ii++)
 	{
-		if (tt[ii] == '\n'|| tt[ii] == ',' ||
-				tt[ii] == ' ' || tt[ii] == '\t'||
+		if (tt[ii] == '\n' ||  tt[ii] == ',' ||
+				tt[ii] == ' '   ||   tt[ii] == '\t' ||
 				tt[ii] == '!' || tt[ii] == '?' ||
-				tt[ii] == ';' || tt[ii] == '.' || 
+				tt[ii] == ';' || tt[ii] == '.' ||
 				tt[ii] == '"' || tt[ii] == '{' ||
 				tt[ii] == ')' || tt[ii] == '(' || tt[ii] == '}')
 		{
@@ -33,5 +33,5 @@ char *cap_string(char *tt)
 		}
 	}
 
-	return tt;
+	return (tt);
 }
