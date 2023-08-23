@@ -1,39 +1,37 @@
 #include <stdio.h>
-#include <stdio.h>
 
 /**
- * cap_string - capitalizes all words after the sine
+ * cap_string - capitalizes all words after the separator
  * @str: input
  *
  * Return: pointer
- */
-
-char *cap_string(char *str)
+*/
+char *cap_string(char *tt)
 {
 	int ii;
 	int ss = 1;
 
-	for (ii = 0; str[ii] != '\0'; ii++)
+	for (ii = 0; tt[ii] != '\0'; ii++)
 	{
-
-		if (str[ii] == ' ' || str[ii] == '\t' || str[ii] == '\n' ||
-				str[ii] == ',' || str[ii] == ';' || str[ii] == '.' ||
-				str[ii] == '!' || str[ii] == '?' || str[ii] == '"' ||
-				str[ii] == '(' || str[ii] == ')' || str[ii] == '{' || str[ii] == '}')
+		if (tt[ii] == '\n'|| tt[ii] == ',' ||
+				tt[ii] == ' ' || tt[ii] == '\t'||
+				tt[ii] == '!' || tt[ii] == '?' ||
+				tt[ii] == ';' || tt[ii] == '.' || 
+				tt[ii] == '"' || tt[ii] == '{' ||
+				tt[ii] == ')' || tt[ii] == '(' || tt[ii] == '}')
 		{
 			ss = 1;
 		}
-		else if (ss && (str[ii] >= 'a' && str[ii] <= 'z'))
+		else if (ss && (tt[ii] >= 'a' && tt[ii] <= 'z'))
 		{
-			str[ii] = str[ii] - 32;
+			tt[ii] = tt[ii] - 32;
 			ss = 0;
 		}
-		else
+		else if (tt[ii] >= 'A' && tt[ii] <= 'Z')
 		{
-			ss = 0;
+			ss = (0);
 		}
 	}
 
-	return (str);
+	return tt;
 }
-
