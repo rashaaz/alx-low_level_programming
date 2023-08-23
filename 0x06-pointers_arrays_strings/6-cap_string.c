@@ -6,6 +6,7 @@
  *
  * Return: pointer
  */
+
 char *cap_string(char *tt)
 {
 	int ii;
@@ -29,7 +30,7 @@ char *cap_string(char *tt)
 		}
 		else if (tt[ii] >= 'A' && tt[ii] <= 'Z')
 		{
-			ss = (0);
+			ss = 0;
 		}
 	}
 
