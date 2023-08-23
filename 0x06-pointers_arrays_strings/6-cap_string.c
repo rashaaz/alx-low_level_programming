@@ -28,7 +28,7 @@ char *cap_string(char *tt)
 			tt[ii] = tt[ii] - 32;
 			ss = 0;
 		}
-		else if (tt[ii] >= 'A' && tt[ii] <= 'Z')
+		else
 		{
 			ss = 0;
 		}
