@@ -30,7 +30,6 @@ void print_buffer(char *b, int size)
 			if (jj % 2 == 1)
 				printf(" ");
 		}
-		printf(" ");
 		for (jj = 0; jj < 10; jj++)
 		{
 			if (ii + jj < size)
