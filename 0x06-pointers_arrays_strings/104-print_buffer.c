@@ -6,7 +6,7 @@
  * @x: the start
  * @y: the end
 */
-void print_hex(const char *b, int x, int y)
+void print_hex(char *b, int x, int y)
 {
 	int ii;
 
@@ -23,33 +23,33 @@ void print_hex(const char *b, int x, int y)
 }
 
 /**
- * is_printable - Check if character is printable
- * @c: Character
+ * print - check
+ * @r: Pointer
  *
- * Return: 1 if printable, 0 if not
+ * Return: value
 */
-int is_printable(char c)
+int print(int r)
 {
-	return (c >= 32 && c <= 126);
+	return (r >= 32 && r <= 126);
 }
 
 /**
  * print_text - Print text
  * @b: Pointer
- * @x: the start
- * @y: the end
+ * @xx: the start
+ * @yy: end
 */
-void print_text(char *b, int x, int y)
+void print_text(char *b, int xx, int yy)
 {
 	int ii;
-	char c;
+	int mm;
 
-	for (ii = 0; ii < y; ii++)
+	for (ii = 0; ii < yy; ii++)
 	{
-		c = *(b + ii + x);
-		if (!is_printable(c))
-			c = '.';
-		printf("%c", c);
+		mm = *(b + ii + xx);
+		if (!print(mm))
+			mm = 46;
+		printf("%c", mm);
 	}
 }
 
@@ -69,13 +69,10 @@ void print_buffer(char *b, int size)
 			jj = (size - ii < 10) ? size - ii : 10;
 			printf("%08x: ", ii);
 			print_hex(b, ii, jj);
-			printf(" ");
 			print_text(b, ii, jj);
 			printf("\n");
 		}
-	}
-	else
-	{
+
+	} else
 		printf("\n");
-	}
 }

@@ -15,8 +15,8 @@ char *rot13(char *rr);
 int _putchar(char r);
 void print_number(int n);
 char *infinite_add(char *n1, char *n2, char *r, int size_r);
-void print_hex(const char *b, int x, int y);
-int is_printable(char c);
-void print_text(const char *b, int x, int y);
+void print_hex(char *b, int x, int y);
+int print(int r);
+void print_text(char *b, int xx, int yy);
 
 #endif
