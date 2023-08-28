@@ -8,6 +8,7 @@
  * Return: (s + ii)
  */
 
+
 char *_strpbrk(char *s, char *accept)
 {
 	unsigned int ii, jj;
@@ -22,4 +23,6 @@ char *_strpbrk(char *s, char *accept)
 			}
 		}
 	}
+
+	return (NULL);
 }
