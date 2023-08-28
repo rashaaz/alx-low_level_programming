@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
  * print_diagsums - print square matrix of integers
@@ -9,9 +8,9 @@
 
 void print_diagsums(int *a, int size)
 {
-	unsigned int ii;
-	unsigned int num = 0;
-	unsigned int num1 = 0;
+	int ii;
+	int num = 0;
+	int num1 = 0;
 
 	for (ii = 0; ii < size; ii++)
 	{
