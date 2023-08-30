@@ -8,14 +8,11 @@
 
 int _len(char *s)
 {
-	int len = 0;
-
-	while (*s != '\0')
+	if (*s == '\0')
 	{
-		len++;
-		s++;
+		return 0;
 	}
-	return (len);
+	return 1 + _len(s + 1);
 }
 
 /**
