@@ -12,7 +12,10 @@ int _len(char *s)
 	{
 		return (0);
 	}
-	return (1 + _len(s + 1));
+	else
+	{
+		return (1 + _len(s + 1));
+	}
 }
 
 /**
