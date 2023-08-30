@@ -10,9 +10,9 @@ int _len(char *s)
 {
 	if (*s == '\0')
 	{
-		return 0;
+		return (0);
 	}
-	return 1 + _len(s + 1);
+	return (1 + _len(s + 1));
 }
 
 /**
