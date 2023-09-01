@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 
 		r = 0;
 		m = atoi(argv[1]);
-		int sh[5] = {25, 10, 5, 2, 1};
+		int sh[] = {25, 10, 5, 2, 1};
 
 		for (ii = 0; ii < 5; ii++)
 		{
