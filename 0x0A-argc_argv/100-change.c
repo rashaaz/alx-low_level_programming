@@ -3,12 +3,13 @@
 #include <stdlib.h>
 
 /**
- * main - Entry point
+ * main - print value of argv
  * @argc: number of the thing you inter
  * @argv: array of number of the thing you inter
  *
- * Return: Always 0 (Success) else 1
+ * Return: Always 0 (Success)
 */
+
 int main(int argc, char *argv[])
 {
 	if (argc != 2)
@@ -18,19 +19,30 @@ int main(int argc, char *argv[])
 	}
 	else if (argc == 2)
 	{
-		int r = 0;
-		int m = atoi(argv[1]);
+		int ii, r, m;
+
+		r = 0;
+		m = atoi(argv[1]);
 		int sh[5] = {25, 10, 5, 2, 1};
 
-		for (int ii = 0; ii < 5; ii++)
+		for (ii = 0; ii < 5; ii++)
 		{
 			if (m >= sh[ii])
 			{
 				r += m / sh[ii];
 				m = m % sh[ii];
+				if (m % sh[ii] == 0)
+				{
+					break;
+				}
 			}
 		}
 		printf("%d\n", r);
+	}
+	else
+	{
+		printf("Error\n");
+		return (1);
 	}
 	return (0);
 }
