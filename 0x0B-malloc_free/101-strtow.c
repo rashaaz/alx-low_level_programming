@@ -82,6 +82,7 @@ char **strtow(char *str)
 				_start = ii;
 			_end = ii;
 		} else if (_start != -1)
+		{
 			wor[_count] = _partial(str, _start, _end);
 			if (wor[_count] == NULL)
 			{
@@ -93,6 +94,7 @@ char **strtow(char *str)
 			_count++;
 			_start = -1;
 			_end = -1;
+		}
 	}
 	if (_start != -1)
 		wor[_count] = _partial(str, _start, _end);
