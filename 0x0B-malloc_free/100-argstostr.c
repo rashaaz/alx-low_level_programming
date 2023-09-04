@@ -26,6 +26,7 @@ char *argstostr(int ac, char **av)
 	{
 		for (jj = 0; av[ii][jj] != '\0'; jj++)
 			len++;
+		len++;
 	}
 
 	s = malloc(sizeof(char) * (len + 1));
