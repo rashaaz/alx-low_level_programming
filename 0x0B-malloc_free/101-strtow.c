@@ -82,17 +82,17 @@ char **strtow(char *str)
 				_start = ii;
 			_end = ii;
 		} else if (_start != -1)
-		{
 			wor[_count] = _partial(str, _start, _end);
 			if (wor[_count] == NULL)
+			{
 				for (jj = 0; jj < _count; jj++)
 					free(wor[jj]);
 				free(wor);
 				return (NULL);
+			}
 			_count++;
 			_start = -1;
 			_end = -1;
-		}
 	}
 	if (_start != -1)
 		wor[_count] = _partial(str, _start, _end);
