@@ -15,7 +15,7 @@ int ww(char *s)
 
 	for (ii = 0; s[ii]; ii++)
 	{
-		if (s[ii] != ' ')
+		if (s[ii] == ' ')
 		{
 			if (s[ii + 1] != ' ' && s[ii + 1] != '\0')
 				nn++;
