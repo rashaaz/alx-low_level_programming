@@ -1,109 +1,77 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-/**
- * _partial - create a duplicate of a portion
- * @t: pointer
- * @st: number of bgining
- * @d:number of end
- *
- * Return: pointer
- */
-char *_partial(char *t, int st, int d)
-{
-	int jj = 0;
-	int ii;
-
-	char *r = malloc(d - st + 2);
-
-	if (r == NULL)
-		return (NULL);
-
-	for (ii = st; ii <= d; ii++)
-	{
-		r[jj] = t[ii];
-		jj++;
-	}
-
-	r[jj] = '\0';
-
-	return (r);
-}
 
 /**
  * ww - count words
  * @s: pointer
  *
  * Return: count of words
- */
+*/
 int ww(char *s)
 {
-	int cc = 0, ii, nn = 0;
+	int nn = 0, ii;
 
-	for (ii = 0; s[ii] != '\0'; ii++)
+	for (ii = 0; s[ii]; ii++)
 	{
 		if (s[ii] != ' ')
 		{
-			if (!nn)
-			{
-				nn = 1;
-				cc++;
-			}
-		} else
-			nn = 0;
+			if (s[ii + 1] != ' ' && s[ii + 1] != '\0')
+				nn++;
+		} else if (ii == 0)
+			nn++;
 	}
-
-	return (cc);
+	nn++;
+	return (nn);
 }
+
 
 /**
  * strtow - split a string into words
  * @str: pointer
  *
  * Return: pointer
- */
-
+*/
 char **strtow(char *str)
 {
-	int ii, _start = -1, _end = -1, _count = 0, jj, num;
-	char **wor;
+	int ii, jj, kk, ll, nn = 0, cc = 0;
+	char **ch;
 
 	if (str == NULL || *str == '\0')
 		return (NULL);
-	num = ww(str);
-	wor = malloc((num + 1) * sizeof(char *));
-	if (wor == NULL)
+	nn = ww(str);
+	if (nn == 1)
 		return (NULL);
-	for (ii = 0; str[ii] != '\0'; ii++)
+	ch = (char **)malloc(nn * sizeof(char *));
+	if (ch == NULL)
+		return (NULL);
+	ch[nn - 1] = NULL;
+	ii = 0;
+	while (str[ii])
 	{
-		if (str[ii] != ' ')
+		if (str[ii] != ' ' && (ii == 0 || str[ii - 1] == ' '))
 		{
-			if (_start == -1)
-				_start = ii;
-			_end = ii;
-		} else if (_start != -1)
-		{
-			wor[_count] = _partial(str, _start, _end);
-			if (wor[_count] == NULL)
+			for (jj = 1; str[ii + jj] != ' ' && str[ii + jj]; jj++)
+				;
+			jj++;
+			ch[cc] = (char *)malloc(jj * sizeof(char));
+			jj--;
+			if (ch[cc] == NULL)
 			{
-				for (jj = 0; jj < _count; jj++)
-					free(wor[jj]);
-				free(wor);
+				for (kk = 0; kk < cc; kk++)
+					free(ch[kk]);
+				free(ch[nn - 1]);
+				free(ch);
 				return (NULL);
 			}
-			_count++;
-			_start = -1;
-			_end = -1;
+			for (ll = 0; ll < jj; ll++)
+				ch[cc][ll] = str[ii + ll];
+			ch[cc][ll] = '\0';
+			cc++;
+			ii += jj;
 		}
+		else
+			ii++;
 	}
-	if (_start != -1)
-		wor[_count] = _partial(str, _start, _end);
-	if (wor[_count] == NULL)
-		for (jj = 0; jj < _count; jj++)
-			free(wor[jj]);
-	free(wor);
-	return (NULL);
-	_count++;
-	wor[_count] = NULL;
-	return (wor);
+	return (ch);
 }
