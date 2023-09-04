@@ -65,7 +65,7 @@ int ww(char *s)
 
 char **strtow(char *str)
 {
-	int ii, _start = -1, _end = -1, _count = 0, jj, int num;
+	int ii, _start = -1, _end = -1, _count = 0, jj, num;
 
 	if (str == NULL || *str == '\0')
 		return (NULL);
