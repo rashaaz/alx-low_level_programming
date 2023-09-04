@@ -66,12 +66,12 @@ int ww(char *s)
 char **strtow(char *str)
 {
 	int ii, _start = -1, _end = -1, _count = 0, jj, num;
+	char **wor;
 
 	if (str == NULL || *str == '\0')
 		return (NULL);
 	num = ww(str);
-	char **wor = malloc((num + 1) * sizeof(char *));
-
+	wor = malloc((num + 1) * sizeof(char *));
 	if (wor == NULL)
 		return (NULL);
 	for (ii = 0; str[ii] != '\0'; ii++)
