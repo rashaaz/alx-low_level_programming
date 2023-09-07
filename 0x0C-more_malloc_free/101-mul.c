@@ -75,7 +75,7 @@ int main(int argc, char const *argv[])
 
 	if (argc != 3)
 	{
-		ing("Error");
+		ing("Error ");
 		exit(98);
 	}
 	pr(_atoi(argv[1]) * _atoi(argv[2]));
