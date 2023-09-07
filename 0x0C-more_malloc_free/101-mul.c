@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include <unistd.h>
 
 /**
  * number - do the sane jop of atoi
@@ -59,6 +60,16 @@ void ing(char *s)
 	{
 		_putchar(s[i]);
 	}
+}
+/**
+ * _putchar - print one chsr
+ * @c: char
+ *
+ * Return: chae
+ */
+int _putchar(char c)
+{
+	return (write(1, &c, 1));
 }
 
 /**
