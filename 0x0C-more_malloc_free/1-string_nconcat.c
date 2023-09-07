@@ -42,7 +42,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		r[ii] = s1[ii];
 	}
 
-	for (jj = 0; jj < n || jj < l2; jj++)
+	for (jj = 0; jj < n; jj++)
 	{
 		r[ii + jj] = s2[jj];
 	}
