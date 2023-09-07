@@ -1,6 +1,4 @@
 #include "main.h"
-#include <stdlib.h>
-#include <unistd.h>
 
 /**
  * number - do the sane jop of atoi
@@ -40,7 +38,9 @@ void pr(unsigned long int x)
 {
 	unsigned long int re, d = 1, i;
 
-	for (; x / d > 9; d /= 10)
+	for (i = 0; x / d > 9; d *= 10)
+		;
+	for (; x / d >= 1; x %= d, d /= 10)
 	{
 		re = x / d;
 		_putchar('0' + re);
