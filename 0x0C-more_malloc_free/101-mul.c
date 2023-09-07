@@ -1,49 +1,49 @@
 #include "main.h"
-#include <unistd.h>
+#include <stdlib.h>
 
 /**
- * _putchar - print
- * @r: char
- *
- * Return: har
+ * ing - print string
+ * @s: pointer
  */
 
-int _putchar(char r)
+void ing(char *s)
 {
-	return (write(1, &r, 1));
-}
+	int i;
 
+	for (i = 0; s[i]; i++)
+	{
+		_putchar(s[i]);
+	}
+}
 /**
  * number - do the sane jop of atoi
  * @sh: pointer
- *
+ * 
  * Return: ng * lt
  */
 int number(char *sh)
 {
 	unsigned long int i, lt = 0, m;
-	int ng;
+	int ng = 1;
 
-	ng = 1;
-	for (m = 0; !(sh[m] >= '0' && sh[m] <= '9'); m++)
+	for (m = 0; !(sh[m] >= 48 && sh[m] <= 57); m++)
 	{
 		if (sh[m] == '-')
 		{
 			ng *= -1;
 		}
 	}
-	for (i = m; (sh[i] >= '0' && sh[i] <= '9'); i++)
+	for (i = m; sh[i] >= 48 && sh[i] <= 57; i++)
 	{
 		lt *= 10;
 		lt += (sh[i] - 48);
 	}
 	return (ng * lt);
 }
-
 /**
  * pr - print number
  * @x: number
- *
+ * 
  * Return: re
  */
 
@@ -61,25 +61,10 @@ void pr(unsigned long int x)
 }
 
 /**
- * ing - print string
- * @s: pointer
- */
-
-void ing(char *s)
-{
-	int i;
-
-	for (i = 0; s[i]; i++)
-	{
-		_putchar(s[i]);
-	}
-}
-
-/**
  * main - Entry point
  * @argc: number of the thing you inter
  * @argv: array of number of the thing you inter
- *
+ * 
  * Return: Always 0 (Success)
  */
 
