@@ -1,4 +1,18 @@
 #include "main.h"
+#include <stdlib.h>
+#include <unistd.h>
+
+/**
+ * _putchar - print
+ * @r: char
+ *
+ * Return: har
+ */
+
+int _putchar(char r)
+{
+	return (write(1, &r, 1));
+}
 
 /**
  * number - do the sane jop of atoi
