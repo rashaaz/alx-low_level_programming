@@ -2,62 +2,62 @@
 #include <stdlib.h>
 
 /**
- * _puts - print string
- *  @str: pointer
+ * ing - print string
+ * @s: pointer
  */
 
-void _puts(char *str)
+void ing(char *s)
 {
 	int i = 0;
 
-	while (str[i])
+	while (s[i])
 	{
-		_putchar(str[i]);
+		_putchar(s[i]);
 		i++;
 	}
 }
 /**
  * _atoi - do the sane jop of atoi
- * @s: pointer
+ * @sh: pointer
  *
  * Return: ng * lt
  */
-int _atoi(const char *s)
+int _atoi(const char *sh)
 {
-	int sign = 1;
-	unsigned long int resp = 0, firstNum, i;
+	int ng = 1;
+	unsigned long int i, lt = 0, m;
 
-	for (firstNum = 0; !(s[firstNum] >= 48 && s[firstNum] <= 57); firstNum++)
+	for (m = 0; !(sh[m] >= 48 && sh[m] <= 57); m++)
 	{
-		if (s[firstNum] == '-')
+		if (sh[m] == '-')
 		{
-			sign *= -1;
+			ng *= -1;
 		}
 	}
-	for (i = firstNum; s[i] >= 48 && s[i] <= 57; i++)
+	for (i = m; sh[i] >= 48 && sh[i] <= 57; i++)
 	{
-		resp *= 10;
-		resp += (s[i] - 48);
+		lt *= 10;
+		lt += (sh[i] - 48);
 	}
-	return (sign * resp);
+	return (ng * lt);
 }
 /**
- * print_int - print number
- * @n: number
+ * pr - print number
+ * @x: number
  *
- * Return: resp
+ * Return: re
  */
 
-void print_int(unsigned long int n)
+void pr(unsigned long int x)
 {
-	unsigned long int divisor = 1, i, resp;
+	unsigned long int re, d = 1, i;
 
-	for (i = 0; n / divisor > 9; i++, divisor *= 10)
+	for (i = 0; x / d > 9; i++, d *= 10)
 		;
-	for (; divisor >= 1; n %= divisor, divisor /= 10)
+	for (; d >= 1; x %= d, d /= 10)
 	{
-		resp = n / divisor;
-		_putchar('0' + resp);
+		re = x / d;
+		_putchar('0' + re);
 	}
 }
 
@@ -75,12 +75,11 @@ int main(int argc, char const *argv[])
 
 	if (argc != 3)
 	{
-		_puts("Error ");
+		ing("Error ");
 		exit(98);
 	}
-	print_int(_atoi(argv[1]) * _atoi(argv[2]));
+	pr(_atoi(argv[1]) * _atoi(argv[2]));
 	_putchar('\n');
 
 	return (0);
 }
-
