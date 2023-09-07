@@ -10,21 +10,22 @@ void ing(char *s)
 {
 	int i;
 
-	for (i = 0; s[i]; i++)
+	while (s[i])
 	{
 		_putchar(s[i]);
+		i++;
 	}
 }
 /**
- * number - do the sane jop of atoi
+ * _atoi - do the sane jop of atoi
  * @sh: pointer
- * 
+ *
  * Return: ng * lt
  */
-int number(char *sh)
+int _atoi(const char *sh)
 {
-	unsigned long int i, lt = 0, m;
 	int ng = 1;
+	unsigned long int i, lt = 0, m;
 
 	for (m = 0; !(sh[m] >= 48 && sh[m] <= 57); m++)
 	{
@@ -43,7 +44,7 @@ int number(char *sh)
 /**
  * pr - print number
  * @x: number
- * 
+ *
  * Return: re
  */
 
@@ -51,9 +52,9 @@ void pr(unsigned long int x)
 {
 	unsigned long int re, d = 1, i;
 
-	for (i = 0; x / d > 9; d *= 10)
+	for (i = 0; x / d > 9; i++, d *= 10)
 		;
-	for (; x / d >= 1; x %= d, d /= 10)
+	for (; d >= 1; x %= d, d /= 10)
 	{
 		re = x / d;
 		_putchar('0' + re);
@@ -64,11 +65,11 @@ void pr(unsigned long int x)
  * main - Entry point
  * @argc: number of the thing you inter
  * @argv: array of number of the thing you inter
- * 
+ *
  * Return: Always 0 (Success)
  */
 
-int main(int argc, char *argv[])
+int main(int argc, char const *argv[])
 {
 	(void)argc;
 
@@ -77,7 +78,7 @@ int main(int argc, char *argv[])
 		ing("Error");
 		exit(98);
 	}
-	pr(number(argv[1]) * number(argv[2]));
+	pr(_atoi(argv[1]) * _atoi(argv[2]));
 	_putchar('\n');
 
 	return (0);
