@@ -2,84 +2,68 @@
 #include <stdlib.h>
 
 /**
- * ing - print string
- * @s: pointer
- */
-
-void ing(char *s)
+ *  * is_digit - Check if a string is composed of digits.
+ *   * @str: The input string to check.
+ *    * Return: 1 if composed of digits, 0 otherwise.
+ *     */
+int is_digit(char *str)
 {
-	int i;
-
-	while (s[i])
+	while (*str)
 	{
-		_putchar(s[i]);
-		i++;
+		if (*str < '0' || *str > '9')
+			return (0);
+		str++;
 	}
-}
-/**
- * _atoi - do the sane jop of atoi
- * @sh: pointer
- *
- * Return: ng * lt
- */
-int _atoi(const char *sh)
-{
-	int ng = 1;
-	unsigned long int i, lt = 0, m;
-
-	for (m = 0; !(sh[m] >= 48 && sh[m] <= 57); m++)
-	{
-		if (sh[m] == '-')
-		{
-			ng *= -1;
-		}
-	}
-	for (i = m; sh[i] >= 48 && sh[i] <= 57; i++)
-	{
-		lt *= 10;
-		lt += (sh[i] - 48);
-	}
-	return (ng * lt);
-}
-/**
- * pr - print number
- * @x: number
- *
- * Return: re
- */
-
-void pr(unsigned long int x)
-{
-	unsigned long int re, d = 1, i;
-
-	for (i = 0; x / d > 9; i++, d *= 10)
-		;
-	for (; d >= 1; x %= d, d /= 10)
-	{
-		re = x / d;
-		_putchar('0' + re);
-	}
+	return (1);
 }
 
 /**
- * main - Entry point
- * @argc: number of the thing you inter
- * @argv: array of number of the thing you inter
- *
- * Return: Always 0 (Success)
- */
-
-int main(int argc, char const *argv[])
+ *  * main - Entry point.
+ *   * @argc: Number of arguments.
+ *    * @argv: Array of arguments.
+ *     * Return: 0 on success, 98 on error.
+ *      */
+int main(int argc, char *argv[])
 {
-	(void)argc;
+	int len1, len2, i, j, k, carry, digit;
+	int *result;
 
-	if (argc != 3)
+	if (argc != 3 || !is_digit(argv[1]) || !is_digit(argv[2]))
 	{
-		ing("Error");
+		printf("Error\n");
 		exit(98);
 	}
-	pr(_atoi(argv[1]) * _atoi(argv[2]));
-	_putchar('\n');
 
+	len1 = strlen(argv[1]);
+	len2 = strlen(argv[2]);
+	result = calloc(len1 + len2, sizeof(int));
+
+	if (!result)
+	{
+		printf("Error\n");
+		exit(98);
+	}
+
+	for (i = len1 - 1; i >= 0; i--)
+	{
+		carry = 0;
+		for (j = len2 - 1; j >= 0; j--)
+		{
+			digit = (argv[1][i] - '0') * (argv[2][j] - '0') + result[i + j + 1] + carry;
+			carry = digit / 10;
+			result[i + j + 1] = digit % 10;
+		}
+		result[i + j + 1] = carry;
+	}
+
+	for (k = 0; k < len1 + len2; k++)
+	{
+		if (k == 0 && result[k] == 0)
+			continue;
+		printf("%d", result[k]);
+	}
+	printf("\n");
+
+	free(result);
 	return (0);
 }
