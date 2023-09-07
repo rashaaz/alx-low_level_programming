@@ -61,16 +61,6 @@ void ing(char *s)
 		_putchar(s[i]);
 	}
 }
-/**
- * _putchar - print one chsr
- * @c: char
- *
- * Return: chae
- */
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
-}
 
 /**
  * main - Entry point
