@@ -10,10 +10,9 @@
 int sum_them_all(const unsigned int n, ...)
 {
 	va_list sh;
-	int ii = n, total;
+	int ii = n, total = 0;
 
-	total = 0;
-	if (n)
+	if (!n)
 		return (0);
 
 	va_start(sh, n);
