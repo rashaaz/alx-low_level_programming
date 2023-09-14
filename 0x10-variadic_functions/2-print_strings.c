@@ -5,13 +5,18 @@
  * @separator: string between string
  * @n: The number of parameters
  * @...: The variable number of strings.
-*/
+ */
 void print_strings(const char *separator, const unsigned int n, ...)
 {
 	va_list sh;
-	int ii;
+	unsigned int ii;
 	char *s;
 
+	if (!n)
+	{
+		printf("\n");
+		return;
+	}
 	va_start(sh, n);
 	for (ii = 0; ii < n; ii++)
 	{
@@ -30,6 +35,6 @@ void print_strings(const char *separator, const unsigned int n, ...)
 			printf("%s", separator);
 		}
 	}
-	va_end(sh);
 	printf("\n");
+	va_end(sh);
 }
