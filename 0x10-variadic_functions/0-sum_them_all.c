@@ -16,7 +16,7 @@ int sum_them_all(const unsigned int n, ...)
 		return (0);
 
 	va_start(sh, n);
-	for (ii = 0; ii < n; ii++)
+	while (ii--)
 		total += va_arg(sh, int);
 	va_end(sh);
 
