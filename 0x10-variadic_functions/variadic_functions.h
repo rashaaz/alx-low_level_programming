@@ -4,8 +4,21 @@
 #include <stdio.h>
 #include <stdarg.h>
 
+/**
+ * struct rr - holding format specifiers and functions
+ * @rr: format specifier
+ * @ss: pointer
+ */
+
+typedef struct rr
+{
+	char *rr;
+	void (*ss)(char *, va_list);
+} rr_s;
+
 int sum_them_all(const unsigned int n, ...);
 void print_numbers(const char *separator, const unsigned int n, ...);
 void print_strings(const char *separator, const unsigned int n, ...);
+void print_all(const char * const format, ...);
 
 #endif
