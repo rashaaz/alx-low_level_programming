@@ -36,5 +36,6 @@ size_t print_listint_safe(const listint_t *head);
 const listint_t **sh(const listint_t **li, size_t s, const listint_t *n);
 size_t free_listint_safe(listint_t **h);
 listint_t *find_listint_loop(listint_t *head);
+listint_t *find(listint_t *head);
 
 #endif
