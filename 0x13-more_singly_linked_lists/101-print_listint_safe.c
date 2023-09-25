@@ -18,6 +18,7 @@ size_t print_listint_safe(const listint_t *head)
 			if (head == no[i])
 			{
 				printf("-> [%p] %d\n", (void *)head, head->n);
+				free(no);
 				return (co);
 			}
 		}
@@ -50,13 +51,8 @@ const listint_t **sh(const listint_t **li, size_t s, const listint_t *n)
 		exit(98);
 	}
 	for (i = 0; i < s - 1; i++)
-	{
 		new[i] = li[i];
-	}
-	new[s - 1] = n;
-
-	if (li != NULL)
-		free(li);
-
+	new[i] = n;
+	free(li);
 	return (new);
 }
