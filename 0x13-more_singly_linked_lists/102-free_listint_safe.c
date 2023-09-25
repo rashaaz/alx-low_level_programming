@@ -54,7 +54,7 @@ listint_t *find(listint_t *head)
 	{
 		if (finsh == finsh->next)
 			return (finsh);
-		for (tp = head; tp != NULL; tp = tp->next)
+		for (tp = head; tp != finsh; tp = tp->next)
 			if (tp == finsh->next)
 				return (finsh->next);
 	}
