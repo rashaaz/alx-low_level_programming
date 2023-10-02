@@ -1,6 +1,6 @@
 #include "main.h"
 
-#define USAGE "Usage: cp file_from\n"
+#define USAGE "Usage: cp file_from_to\n"
 #define EOR_NOM "Error: Can't read from file %s\n"
 #define EOR_NUMW "Error: Can't write to %s\n"
 #define EOR_NUMcol "Error: Can't close fd %d\n"
