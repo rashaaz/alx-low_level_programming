@@ -20,7 +20,7 @@ hash_node_t *m_hash_nd(const char *key, const char *value)
 		free(n_nd);
 		return (NULL);
 	}
-	n_nd->value == strdup(value);
+	n_nd->value = strdup(value);
 	if (n_nd->value == NULL)
 	{
 		free(n_nd->key);
@@ -31,7 +31,6 @@ hash_node_t *m_hash_nd(const char *key, const char *value)
 
 	return (n_nd);
 }
-
 /**
  * hash_table_set - Adds an element
  * @ht: The hash table to add
