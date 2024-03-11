@@ -6,13 +6,9 @@
 
 /**
  * struct listint_s - singly linked list
- *
- * @n: Integer
- * @index: Index of the node in the list
- * @next: Pointer to the next node
- *
- * Description: singly linked list node structure
- * for Holberton project
+ * @n: integer
+ * @index: index of the node in the list
+ * @next: points to the next node
  */
 typedef struct listint_s
 {
@@ -22,15 +18,11 @@ struct listint_s *next;
 } listint_t;
 
 /**
- * struct skiplist_s - Singly linked list with an express lane
- *
- * @n: Integer
- * @index: Index of the node in the list
- * @next: Pointer to the next node
- * @express: Pointer to the next node in the express lane
- *
- * Description: singly linked list node structure with an express lane
- * for Holberton project
+ * struct skiplist_s - singly linked list with an express lane
+ * @n: integer
+ * @index: index of the node in the list
+ * @next: points to the next node
+ * @express: points to the next node in the express lane
  */
 typedef struct skiplist_s
 {
