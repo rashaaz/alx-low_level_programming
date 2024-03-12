@@ -24,7 +24,7 @@ kk = 0;
 do {
 prev = list;
 kk++;
-index = kk * mm;
+index = kk *mm;
 
 while (list->next && list->index < index)
 list = list->next;
